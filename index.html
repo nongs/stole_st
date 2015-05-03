@@ -103,27 +103,27 @@
                 	<label for="three" class="mevent">event</label>
                 	<span class="line"></span>
                 	<label for="four" class="mnotice">notice</label>
-                	<ul class="co_menu">
-                		<li><a href="#">Black-jean</a></li>
-                		<li><a href="#">Blue</a></li>
-                		<li><a href="#">Blue-jean</a></li>
-                		<li><a href="#">Brown</a></li>
-                		<li><a href="#">Orange-brown</a></li>
-                		<li><a href="#">Pink</a></li>
-                		<li><a href="#">Red</a></li>
-                        <li><a href="#">Skyblue</a></li>
-                        <li><a href="#">Yellow</a></li>
-                	</ul>
-                	<ul class="pa_menu">
-                		<li><a href="#">Dot</a></li>
-                		<li><a href="#">Dot2</a></li>
-                		<li><a href="#">Dot3</a></li>
-                		<li><a href="#">Stripe</a></li>
-                		<li><a href="#">Stripe2</a></li>
-                		<li><a href="#">Stripe3</a></li>
-                		<li><a href="#">Stripe4</a></li>
-                        <li><a href="#">Stripe5</a></li>
-                	</ul>
+                    <ul class="co_menu">
+                        <li><a href="blackjean.html">Black-jean</a></li>
+                        <li><a href="blue.html">Blue</a></li>
+                        <li><a href="bluejean.html">Blue-jean</a></li>
+                        <li><a href="brown.html">Brown</a></li>
+                        <li><a href="orangebrown.html">Orange-brown</a></li>
+                        <li><a href="pink.html">Pink</a></li>
+                        <li><a href="red.html">Red</a></li>
+                        <li><a href="skyblue.html">Skyblue</a></li>
+                        <li><a href="yellow.html">Yellow</a></li>
+                    </ul>
+                    <ul class="pa_menu">
+                        <li><a href="dot.html">Dot</a></li>
+                        <li><a href="dot2.html">Dot2</a></li>
+                        <li><a href="dot3.html">Dot3</a></li>
+                        <li><a href="stripe.html">Stripe</a></li>
+                        <li><a href="stripe2.html">Stripe2</a></li>
+                        <li><a href="stripe3.html">Stripe3</a></li>
+                        <li><a href="stripe4.html">Stripe4</a></li>
+                        <li><a href="stripe5.html">Stripe5</a></li>
+                    </ul>
             </div>
                 	<script>
     $(function(){
@@ -148,8 +148,45 @@
                 <span><p class="side_list">List</p></span>
                 	<div class="inner_list">
                 		<p class="list_sf">Color</p>
+                        <div class="colorsl">
+                            <p><a href="blackjean.html">Black-jean</a></p>
+                            <p><a href="blue.html">Blue</a></p>
+                            <p><a href="bluejean.html">Blue-jean</a></p>
+                            <p><a href="brown.html">Brown</a></p>
+                            <p><a href="orangebrown.html">Orange-brown</a></p>
+                            <p><a href="pink.html">Pink</a></p>
+                            <p><a href="red.html">Red</a></p>
+                            <p><a href="skyblue.html">Skyblue</a></p>
+                            <p><a href="yellow.html">Yellow</a></p>
+                        </div>
                 		<p class="list_sum">Pattern</p>
+                        <div class="patternsl">
+                            <p><a href="dot.html">Dot</a></p>
+                            <p><a href="dot2.html">Dot2</a></p>
+                            <p><a href="dot3.html">Dot3</a></p>
+                            <p><a href="stripe.html">Stripe</a></p>
+                            <p><a href="stripe2.html">Stripe2</a></p>
+                            <p><a href="stripe3.html">Stripe3</a></p>
+                            <p><a href="stripe4.html">Stripe4</a></p>
+                            <p><a href="stripe5.html">Stripe5</a></p>
+                        </div>
                 	</div>
+                    <script>
+                        $(function(){
+                            $('.colorsl, .patternsl').css('display','none');
+                        });
+                        $(function(){
+                            $('.list_sf').click(function(){
+                                $('.colorsl').slideToggle('slow');
+                                $('.colorsl').css('display','block');
+                            });
+                        });
+                        $(function(){
+                            $('.list_sum').click(function(){
+                                $('.patternsl').slideToggle('slow');
+                            });
+                        });
+                    </script>
                 <span><p class="side_event">Event</p></span>
                 <span><p class="side_notice">Notice</p></span>
                 <a href="inform.html"><svg height="50" width="50" id="clickme">
