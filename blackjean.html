@@ -1,0 +1,164 @@
+<!doctype HTML>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<link rel="stylesheet" type="text/css" href="blackjean.css"/>
+	<title>Stole_st</title>
+	<script src="jquery-1.6.2.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.navigation').click(function(){
+                $('.sidebar').fadeIn('slow');
+                $('.page_opacity').css('display', 'block');
+        });
+    });
+    $(document).ready(function(){
+        $('.page_opacity').click(function(){
+                $('.sidebar').fadeOut('slow');
+                $('.page_opacity').css('display', 'none');
+        });
+    });
+    $(document).ready(function(){
+        $('.blue').click(function(){
+                $('.images img').css('display', 'none');
+                $('.image1').css('display', 'inline-block');
+        });
+    });
+    $(document).ready(function(){
+        $('.pink').click(function(){
+                $('.images img').css('display', 'none');
+                $('.image2').css('display', 'inline-block');
+        });
+    });
+    $(document).ready(function(){
+        $('.stripe').click(function(){
+                $('.images img').css('display', 'none');
+                $('.image3').css('display', 'inline-block');
+        });
+    });
+    $(document).ready(function(){
+        $('.dotted').click(function(){
+                $('.images img').css('display', 'none');
+                $('.image4').css('display', 'inline-block');
+        });
+    });
+    </script>
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62497644-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<div class="page">
+		<input id="one" name="transforms" type="radio" value="1">
+		<input id="two" name="transforms" type="radio" value="2">
+		<input id="three" name="transforms" type="radio" value="3">
+		<input id="four" name="transforms" type="radio" value="4">
+		<div class="navigation">
+        	<div class="menu1"></div>
+        	<div class="menu2"></div>
+        	<div class="menu3"></div>
+        </div>
+        <div class="header">
+        <a href="#">
+            <div class="logo">Stole_st</div></a>
+            <div class="menubar">
+                	<label for="one" class="mcolor">color</label>
+                	<span class="line"></span>
+                	<label for="two" class="mpattern">pattern</label>
+                	<span class="line"></span>
+                	<label for="three" class="mevent">event</label>
+                	<span class="line"></span>
+                	<label for="four" class="mnotice">notice</label>
+                	<ul class="co_menu">
+                		<li><a href="#">Beige</a></li>
+                		<li><a href="#">Black</a></li>
+                		<li><a href="#">Blue</a></li>
+                		<li><a href="#">Green</a></li>
+                		<li><a href="#">Darkbrown</a></li>
+                		<li><a href="#">Lemon</a></li>
+                		<li><a href="#">Pink</a></li>
+                	</ul>
+                	<ul class="pa_menu">
+                		<li><a href="#">Check</a></li>
+                		<li><a href="#">Checker</a></li>
+                		<li><a href="#">Dot</a></li>
+                		<li><a href="#">Leap</a></li>
+                		<li><a href="#">Stripe</a></li>
+                		<li><a href="#">Wave</a></li>
+                		<li><a href="#">Twotone</a></li>
+                	</ul>
+            </div>
+        <script>
+    		$(function(){
+  				var offset1 = $('.mcolor').offset();
+  				var offset2 = $('.mpattern').offset();
+  				$('.co_menu').offset({top: offset1.top+30, left :  offset1.left-30});
+  				$('.pa_menu').offset({top: offset2.top+30, left :  offset2.left-20});
+        		$(".mcolor").mouseover(function(){
+        	    	$('.co_menu').slideDown();
+        		});
+        			$(".mcolor").click(function(){
+        			$('.co_menu').hide();
+        		});
+    		});
+        	$(".mpattern").mouseover(function(){
+            	$('.pa_menu').slideDown();
+        	});
+        	$(".mpattern").click(function(){
+        		$('.pa_menu').hide();
+        	});
+		</script>
+        </div>
+        <div class="page_opacity">
+        </div>
+	    <div class="container">
+            <div class="sidebar">
+                <span><p class="side_list">List</p></span>
+                	<div class="inner_list">
+                		<p class="list_sf">Bagics</p>
+                		<p class="list_sum">Pattern</p>
+                	</div>
+                <span><p class="side_event">Event</p></span>
+                <span><p class="side_notice">Notice</p></span>
+            </div>
+            <!--메뉴바 코드입니다. 모바일환경에 최적화 시켜야 합니다.-->
+                <div class="goods">
+                    <img src="images/bagics/black-jean.jpg" alt="goods Image">
+                    <div class="goodsInform">
+                        <p class="goodsName">상품명 : Black-jean</p>
+                        <p class="goodsPrice">가격 : price</p>
+                        <p class="goodsamount">수량 : 
+                        <input type="number" value="0" min="0"></p>
+                        <button type="button" id="charge">구입하러가기</button></p>
+                    </div>
+                </div>
+                <div class="recomGoods">
+                    <p>추천 상품</p>
+                    <img src="images/bagics/blue-jean.jpg">
+                    <img src="images/pattern/dot3.jpg">
+                    <img src="images/pattern/stripe3.jpg">
+                </div>
+                <div class="preview">
+                    <img src="#">
+                    <img src="#">
+                    <img src="#">
+                    <img src="#">
+                    <img src="#">
+                    <img src="#">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+	    	<div class="ment">계원예술대학교 시각디자인과 과제겸용 페이지입니다.</div>
+	    	<div class="copyright">COPYRIGHT© 2015 BY STOLE_ST.COM</div>
+	    </div>
+	</div>
+</body>
+</html>
