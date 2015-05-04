@@ -1,3 +1,22 @@
+@-webkit-keyframes flash {
+  0%, 25%, 75%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 25%, 75%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
 body{
    	font-family: helvetica;
    	font-size:13.5pt;
@@ -48,6 +67,8 @@ input{
    	vertical-align: center;
    	border: 3px solid gray;
     cursor: pointer;
+    -webkit-animation: flash 4s infinite;
+    animation: flash 4s infinite;
 }
 .menu1, .menu2, .menu3{
    	width:30px;
@@ -320,7 +341,7 @@ button{
     height: auto;
   }
   .menubar{
-  display: none;
+    height:10px;
   }
   label{
     display: none;
@@ -381,7 +402,7 @@ button{
     width:100%;
   }
   .menubar{
-  display: none;
+    height:10px;
   }
   label{
     display: none;

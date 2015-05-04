@@ -1,4 +1,23 @@
-body{
+@-webkit-keyframes flash {
+  0%, 25%, 75%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 25%, 75%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+}body{
    	font-family: helvetica, "Nanum gothic";
    	font-size:13.5pt;
    	letter-spacing: 2px;
@@ -217,6 +236,8 @@ li{
 .goods img{
     width:300px;
     height:400px;
+    -webkit-animation: flash 4s infinite;
+    animation: flash 4s infinite;
     display:inline-block;
 }
 .goodsInform{
@@ -259,7 +280,7 @@ li{
   .page{
     padding: 0 0px;
     height:1200px;
-    width:400px;
+    width:100%;
   }
   .page, .header, .container, .footer, .menubar, .logo{
     height: auto;
@@ -327,7 +348,7 @@ li{
   .page{
     padding: 0 0px;
     height:1200px;
-    width:800px;
+    width:100%;
   }
   .menubar{
   display: none;

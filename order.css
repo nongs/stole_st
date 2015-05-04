@@ -38,3 +38,8 @@ input{
 #ss-submit{
 	margin-top:40px;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) { 
+.chargeForm{
+	width:100%;
+}
+} /*iPhone 4+ galaxy series*/
