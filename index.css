@@ -209,6 +209,7 @@ div:hover .logo{
   background-size: 80px 100px;
 	background-position: 40% 30%;
   opacity: 0.7;
+  z-index: -1;
 }
 .colorselect{
   	margin:0 auto;
@@ -218,6 +219,7 @@ div:hover .logo{
    	background: url(images/model1.png)0 0;
     background-size: 800px 600px;
 	background-repeat: no-repeat;
+  z-index: 1;
 }
 ul{
    	background-color: black; 
@@ -229,6 +231,7 @@ ul{
 }
 #selecter1, #selecter2{
    	margin-top: 100px;
+    z-index: 2;
 }
 #selecter1{
    	float: left;
@@ -244,6 +247,7 @@ ul{
    	position: absolute;
    	display: none;
    	text-align: center;
+    z-index: 2;
 }
 li{
    	width:100px;
@@ -372,6 +376,9 @@ button{
     height: 400px;
     background-size: 100% 400px;
   }
+  .line{
+    display: none;
+  }
   ul{
     width:100px;
   }
@@ -445,6 +452,9 @@ button{
   #selecter2{
     margin-right:30px;
    }
+  .line{
+    display: none;
+  }
   li{
     width:80px;
     margin: 5px auto;
