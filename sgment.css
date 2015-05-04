@@ -94,6 +94,7 @@ label{
 }
 .container{
    	padding-bottom: 20px;
+    margin-top:10px;
 }
 .sidebar{
   	background-color: #333;
@@ -203,6 +204,12 @@ li{
 }
 .co_menu li:last-of-type, .pa_menu li:last-of-type{
    	border:none;
+}
+.co_menu li:first-of-type{
+  height: 50px;
+}
+.co_menu li:nth-of-type(5){
+  height: 50px;
 }
 .goods{
     margin:auto;
