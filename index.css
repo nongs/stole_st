@@ -403,13 +403,13 @@ button{
   .animats {
   margin: 5px auto;
   width:100%;
-  height: auto;
+  height: 50%;
   background-size: 80px 100px;
   }
   .colorselect{
     width:100%;
-    height: auto;
-    background-size: 100% auto;
+    height: 50%;
+    background-size: 100% 50%;
   }
   ul{
     width:100px;
