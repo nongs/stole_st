@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stole_st</title>
     <link rel="stylesheet" type="text/css" href="notice.css"/>
     <script src="js/jquery-1.11.2.min.js"></script>
@@ -28,19 +29,19 @@
     </script>
     <script type="text/javascript">
     $(function(){
-    	$('#clickme').click(function(){
-   			$('#inform').show('slow');
-   			$('#closeinform').show('slow');
+        $('#clickme').click(function(){
+            $('#inform').show('slow');
+            $('#closeinform').show('slow');
         //document.getElementById("closeinform").style.transform = "scale(1,1)";
         //document.getElementById("inform").style.transition = "transform 0.5s cubic-bezier(.32,-0.6,.68,1.6)";
         //document.getElementById("inform").style.transform = "scale(1,1)";
-    	});
-   		$('#closeinform').click(function(){
-   			$('#inform').hide('slow');
-   			$('#closeinform').hide('slow');
+        });
+        $('#closeinform').click(function(){
+            $('#inform').hide('slow');
+            $('#closeinform').hide('slow');
         //document.getElementById("inform").style.display = "none";
         //document.getElementById("closeinform").style.display = "none";
-    	});
+        });
     });
     </script>
     <script>
@@ -81,28 +82,36 @@
 </script>
     <div class="page">
     <div id="bt" onclick="show()"></div>
-	    <input id="one" name="transforms" type="radio" value="1">
-	    <input id="two" name="transforms" type="radio" value="2">
+        <input id="one" name="transforms" type="radio" value="1">
+        <input id="two" name="transforms" type="radio" value="2">
         <input id="three" name="transforms" type="radio" value="3">
         <input id="four" name="transforms" type="radio" value="4">
         <div class="navigation">
-        	<div class="menu1"></div>
-        	<div class="menu2"></div>
-        	<div class="menu3"></div>
+            <div class="menu1"></div>
+            <div class="menu2"></div>
+            <div class="menu3"></div>
         </div>
         <div class="header">
-	<p id="countvisit">
-		손님은 저희 홈페이지에 <SCRIPT>page_counter(jcount);</SCRIPT> 번째로 방문 하셨네요.</p>
+    <p id="countvisit">
+        손님은 저희 홈페이지에 <SCRIPT>page_counter(jcount);</SCRIPT> 번째로 방문 하셨네요.</p>
             <a href="index.html">
             <div class="logo">Stole_st</div></a>
             <div class="menubar">
-                	<label for="one" class="mcolor">color</label>
-                	<span class="line"></span>
-                	<label for="two" class="mpattern">pattern</label>
-                	<span class="line"></span><a href="event.html">
-                	<label for="three" class="mevent">event</label></a>
-                	<span class="line"></span><a href="notice.html">
-                	<label for="four" class="mnotice">notice</label></a>
+                    <label for="one" class="mcolor">color</label>
+                    <span class="line"></span>
+                    <label for="two" class="mpattern">pattern</label>
+                    <span class="line"></span>
+                    <a href="event.html" id="evecli"><label for="three" class="mevent" onclick="event_click()">event</label></a>
+                    <span class="line"></span>
+                    <a href="notice.html" id="notcli"><label for="four" class="mnotice" onclick="notice_click()">notice</label></a>
+                    <script>
+                    function event_click() {
+                        window.location="event.html";
+                    }
+                    function notice_click() {
+                        window.location="notice.html";
+                    }
+                    </script>
                     <ul class="co_menu">
                         <li><a href="blackjean.html">Black-jean</a></li>
                         <li><a href="blue.html">Blue</a></li>
@@ -125,17 +134,17 @@
                         <li><a href="stripe5.html">Stripe5</a></li>
                     </ul>
             </div>
-                	<script>
+                    <script>
     $(function(){
-  			var offset1 = $('.mcolor').offset();
-  			var offset2 = $('.mpattern').offset();
-  			$('.co_menu').offset({top: offset1.top+30, left :  offset1.left-30});
-  			$('.pa_menu').offset({top: offset2.top+30, left :  offset2.left-20});
-        $(".mcolor").mouseover(function(){
+            var offset1 = $('.mcolor').offset();
+            var offset2 = $('.mpattern').offset();
+            $('.co_menu').offset({top: offset1.top+30, left :  offset1.left-30});
+            $('.pa_menu').offset({top: offset2.top+30, left :  offset2.left-20});
+        $(".mcolor").click(function(){
             $('.co_menu').slideToggle();
         });
     });
-        $(".mpattern").mouseover(function(){
+        $(".mpattern").click(function(){
             $('.pa_menu').slideToggle();
         });
 </script><!--오프셋값을 도출시켜 오프셋 값에 맞게 카테고리 메뉴를 생성시킵니다.-->
@@ -143,11 +152,11 @@
         <div class="page_opacity">
         </div>
         <!--sidebar가 보여질 경우에 메뉴에 자연스레 시선이 가게끔 메뉴바를 제외한 페이지를 죽여주는 역할을 하면서 메뉴를 자연스럽게 없애기 위해서 클릭이벤트로 메뉴바를 안보이게 하는 버튼 역할을 합니다.-->
-	    <div class="container">
+        <div class="container">
             <div class="sidebar">
                 <span><p class="side_list">List</p></span>
-                	<div class="inner_list">
-                		<p class="list_sf">Color</p>
+                    <div class="inner_list">
+                        <p class="list_sf">Color</p>
                         <div class="colorsl">
                             <p><a href="blackjean.html">Black-jean</a></p>
                             <p><a href="blue.html">Blue</a></p>
@@ -159,7 +168,7 @@
                             <p><a href="skyblue.html">Skyblue</a></p>
                             <p><a href="yellow.html">Yellow</a></p>
                         </div>
-                		<p class="list_sum">Pattern</p>
+                        <p class="list_sum">Pattern</p>
                         <div class="patternsl">
                             <p><a href="dot.html">Dot</a></p>
                             <p><a href="dot2.html">Dot2</a></p>
@@ -170,25 +179,30 @@
                             <p><a href="stripe4.html">Stripe4</a></p>
                             <p><a href="stripe5.html">Stripe5</a></p>
                         </div>
-                	</div>
+                    </div>
+                    <div class="inner_blank"></div>
                     <script>
-                        $(function(){
-                            $('.colorsl, .patternsl').css('display','none');
-                        });
                         $(function(){
                             $('.list_sf').click(function(){
                                 $('.colorsl').slideToggle('slow');
-                                $('.colorsl').css('display','block');
+                                $('.patternsl').slideUp('slow');
                             });
                         });
                         $(function(){
                             $('.list_sum').click(function(){
                                 $('.patternsl').slideToggle('slow');
+                                $('.colorsl').slideUp('slow');
+                            });
+                        });
+                        $(function(){
+                            $('.list_sum, .list_sf').click(function(){
+                                $('.inner_blank').slideToggle('slow');
                             });
                         });
                     </script>
                 <span><a href="event.html"><p class="side_event">Event</p></a></span>
                 <span><a href="notice.html"><p class="side_notice">Notice</p></a></span>
+                <span><a href="index.html"><p class="side_home">Main</p></a></span>
                 <a href="inform.html"><svg height="50" width="50" id="clickme">
   <circle cx="25" cy="25" r="20" stroke="black" stroke-width="3" fill="gray" />
 <text x="3" y="30" fill="white" font-family="'ArialRoundedMTBold'" font-size="10pt" letter-spacing="1px">inform</text>

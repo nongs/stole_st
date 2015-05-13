@@ -17,8 +17,9 @@
     opacity: 0;
   }
 }
-}body{
-   	font-family: helvetica, "Nanum gothic";
+}
+body{
+   	font-family: helvetica;
    	font-size:13.5pt;
    	letter-spacing: 2px;
    	line-height: ;
@@ -44,6 +45,9 @@ input[type="radio"]{
    	margin: 0;
    	padding : 5px;
 }
+a[href^="event"],a[href^="notice"]{
+  color:white;
+}
 .counter{ /*카운터 상자의 모양을 설정합니다*/
     background-color:black; /*배경색*/
     color:yellow;/*글자색상*/
@@ -63,6 +67,8 @@ input[type="radio"]{
    	vertical-align: center;
    	border: 3px solid gray;
     cursor: pointer;
+    -webkit-animation: flash 4s infinite;
+    animation: flash 4s infinite;
 }
 .menu1, .menu2, .menu3{
    	width:30px;
@@ -103,6 +109,7 @@ label{
    	padding:3px 10px;
     cursor: pointer;
     border-radius: 5px;
+    color: white;
 }
 .line {
    	width: 1px;
@@ -125,6 +132,7 @@ label{
    	padding-top:5%;
    	vertical-align: center;
    	display: none;
+    z-index: 1;
 }
 .sidebar p{
    	margin: 20px auto;
@@ -150,8 +158,27 @@ label{
    	margin : 3px;
    	padding: 10px auto 5px 10px;
 }
+.colorsl, .patternsl{
+  display: none;
+}
+.colorsl{
+  height: 620px;
+}
+.patternsl{
+  height: 590px;
+}
+.inner_blank{
+  display: none;
+  height: 600px;
+}
 .sidebar span{
    	display: block;
+}
+a[href^="event"]{
+  color:white;
+}
+a[href^="notice"]{
+  color:white;
 }
 .page_opacity{
     position: fixed;
@@ -201,6 +228,7 @@ ul{
    	position: absolute;
    	display: none;
    	text-align: center;
+   	z-index: 1;
 }
 li{
    	width:100px;
@@ -231,7 +259,7 @@ li{
   height: 50px;
 }
 .goods{
-    margin:auto;
+    margin: 50px auto;
 }
 .goods img{
     width:300px;
@@ -239,6 +267,7 @@ li{
     -webkit-animation: flash 4s infinite;
     animation: flash 4s infinite;
     display:inline-block;
+    z-index: -1;
 }
 .goodsInform{
     display: inline-block;
@@ -251,14 +280,27 @@ li{
 .recomGoods{
     border:1px solid lightgray;
     margin: 10px auto;
-    padding: 30px 30px;
-    width: 80%;
+    padding: 30px 10px;
+    width: 800px;
     text-align: left;
+}
+.recomGoods p{
+  margin-left: 30px;
 }
 .recomGoods img{
     width: 200px;
     height: 300px;
-    margin: auto 10px;
+    margin: 20px 30px;
+}
+.preview{
+  color:black;
+  width:800px;
+  text-align: left;
+  margin: 10px auto;
+  padding:10px;
+  border:1px solid darkgray;
+  border-radius: 5px;
+  background-color: beige;
 }
 .preview img{
     display:block;
@@ -272,7 +314,14 @@ li{
     clear: both;
     font-size:0.5em;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) { 
+.inner_blank{
+  display: none;
+  height: 600px;
+}
+.side_home{
+  display: none;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) { 
   body{
     font-size:12pt;
     letter-spacing: 1.7px;
@@ -281,130 +330,70 @@ li{
     padding: 0 0px;
     height:1200px;
     width:100%;
+  }
+  div:hover .logo{
+    font-size: 3em;
+    -webkit-transition: none;
+  }
+  .logo{
+    font-family: helvetica-bold;
+    font-size: 3em;
+    font-weight: bold;
   }
   .page, .header, .container, .footer, .menubar, .logo{
     height: auto;
   }
   .menubar{
-  display: none;
+    height: 10px;
+    width: 100%;
+  }
+  .line{
+    display: none;
   }
   label{
     display: none;
   }
   .sidebar{
     width:100%;
+    height: 150%;
+    position: absolute;
   }
   .sidebar p{
     margin: 10px auto;
-  }
-  .mainImage{
-    width:100%;
-    height:50px;
   }
   .footer{
     height:20px;
-    display: none;
-  }
-  ul{
-    width:100px;
-  }
-  #selecter1, #selecter2{
-    margin-top: 50px;
-  }
-  #selecter1{
-    margin-left:30px;
-  }
-  #selecter2{
-    margin-right:30px;
-   }
-  li{
-    width:80px;
-    margin: 5px auto;
   }
   .goods img{
-    width:40%;
+    width:60%;
     height:auto;
   }
   .goodsInform{
     margin:20px 10px;
-    bottom:100px;
+    bottom:0%;
     line-height: 10px;
   }
-  .recomGoods img{
-    width: 30%;
-    height: auto;
-    margin: auto 10px;
-  }
-  .preview img{
-    margin:10px auto;
-    width: 100%;
-  }
-} /*iPhone 4+ galaxy series*/
-@media only screen and (min-device-width: 481px) and (max-device-width: 768px) { 
-  body{
-    font-size:12pt;
-    letter-spacing: 1.7px;
-    }
-  .page{
-    padding: 0 0px;
-    height:1200px;
-    width:100%;
-  }
-  .menubar{
-  display: none;
-  }
-  label{
-    display: none;
-  }
-  .sidebar{
-    width:100%;
-  }
-  .sidebar p{
+  .recomGoods{
+    width: 80%;
+    height: 20%;
     margin: 10px auto;
   }
-  .mainImage{
-    width:100%;
-    height:50px;
-  }
-  .footer{
-    height:30px;
-    display: none;
-  }
-  ul{
-    width:100px;
-  }
-  #selecter1, #selecter2{
-    margin-top: 50px;
-  }
-  #selecter1{
-    margin-left:30px;
-  }
-  #selecter2{
-    margin-right:30px;
-   }
-  li{
-    width:80px;
-    margin: 5px auto;
-  }
-  button{
-    margin-right: 0px;
-  }
-  .goods img{
-    width:40%;
-    height:auto;
-  }
-  .goodsInform{
-    margin:20px 10px;
-    bottom:100px;
-    line-height: 10px;
-  }
   .recomGoods img{
     width: 30%;
-    height: auto;
-    margin: auto 10px;
+    height: 200px;
+    margin: 10px auto;
   }
-  .preview img{
+  .preview{
     margin:10px auto;
-    width: 100%;
+    width: 80%;
   }
-} /*iPhone 6 after series*/
+  .side_home{
+    display: block;
+  }
+  .colorsl{
+    height: 700px;
+  }
+  .inner_blank{
+    height: 660px;
+  }
+}

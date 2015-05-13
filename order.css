@@ -27,6 +27,7 @@ body{
 .ss-q-title{
 	font-weight: bold;
 	margin-bottom: 8px;
+	margin-top: 10px;
 }
 input{
 	color:gray;
@@ -39,9 +40,9 @@ input{
 	margin-top:40px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px) { 
-.chargeForm{
-	border-top: 10px solid black;
-	width:100%;
-	padding-left:0px;
-}
+	.chargeForm{
+		border-top: 10px solid black;
+		width:100%;
+		padding-left:0px;
+	}
 } /*iPhone 4+ galaxy series*/

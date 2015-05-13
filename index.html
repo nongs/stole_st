@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <title>Stole_st</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="index.css"/>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script>
@@ -28,19 +29,19 @@
     </script>
     <script type="text/javascript">
     $(function(){
-    	$('#clickme').click(function(){
-   			$('#inform').show('slow');
-   			$('#closeinform').show('slow');
+        $('#clickme').click(function(){
+            $('#inform').show('slow');
+            $('#closeinform').show('slow');
         //document.getElementById("closeinform").style.transform = "scale(1,1)";
         //document.getElementById("inform").style.transition = "transform 0.5s cubic-bezier(.32,-0.6,.68,1.6)";
         //document.getElementById("inform").style.transform = "scale(1,1)";
-    	});
-   		$('#closeinform').click(function(){
-   			$('#inform').hide('slow');
-   			$('#closeinform').hide('slow');
+        });
+        $('#closeinform').click(function(){
+            $('#inform').hide('slow');
+            $('#closeinform').hide('slow');
         //document.getElementById("inform").style.display = "none";
         //document.getElementById("closeinform").style.display = "none";
-    	});
+        });
     });
     </script>
     <script>
@@ -81,28 +82,36 @@
 </script>
     <div class="page">
     <div id="bt" onclick="show()"></div>
-	    <input id="one" name="transforms" type="radio" value="1">
-	    <input id="two" name="transforms" type="radio" value="2">
+        <input id="one" name="transforms" type="radio" value="1">
+        <input id="two" name="transforms" type="radio" value="2">
         <input id="three" name="transforms" type="radio" value="3">
         <input id="four" name="transforms" type="radio" value="4">
         <div class="navigation">
-        	<div class="menu1"></div>
-        	<div class="menu2"></div>
-        	<div class="menu3"></div>
+            <div class="menu1"></div>
+            <div class="menu2"></div>
+            <div class="menu3"></div>
         </div>
         <div class="header">
-	<p id="countvisit">
-		손님은 저희 홈페이지에 <SCRIPT>page_counter(jcount);</SCRIPT> 번째로 방문 하셨네요.</p>
+    <p id="countvisit">
+        손님은 저희 홈페이지에 <SCRIPT>page_counter(jcount);</SCRIPT> 번 방문 하셨네요.</p>
             <a href="index.html">
             <div class="logo">Stole_st</div></a>
             <div class="menubar">
-                	<label for="one" class="mcolor">color</label>
-                	<span class="line"></span>
-                	<label for="two" class="mpattern">pattern</label>
-                	<span class="line"></span><a href="event.html">
-                	<label for="three" class="mevent">event</label></a>
-                	<span class="line"></span><a href="notice.html">
-                	<label for="four" class="mnotice">notice</label></a>
+                    <label for="one" class="mcolor">color</label>
+                    <span class="line"></span>
+                    <label for="two" class="mpattern">pattern</label>
+                    <span class="line"></span>
+                    <a href="event.html" id="evecli"><label for="three" class="mevent" onclick="event_click()">event</label></a>
+                    <span class="line"></span>
+                    <a href="notice.html" id="notcli"><label for="four" class="mnotice" onclick="notice_click()">notice</label></a>
+                    <script>
+                    function event_click() {
+                        window.location="event.html";
+                    }
+                    function notice_click() {
+                        window.location="notice.html";
+                    }
+                    </script>
                     <ul class="co_menu">
                         <li><a href="blackjean.html">Black-jean</a></li>
                         <li><a href="blue.html">Blue</a></li>
@@ -125,17 +134,17 @@
                         <li><a href="stripe5.html">Stripe5</a></li>
                     </ul>
             </div>
-                	<script>
+                    <script>
     $(function(){
-  			var offset1 = $('.mcolor').offset();
-  			var offset2 = $('.mpattern').offset();
-  			$('.co_menu').offset({top: offset1.top+30, left :  offset1.left-30});
-  			$('.pa_menu').offset({top: offset2.top+30, left :  offset2.left-20});
-        $(".mcolor").mouseover(function(){
+            var offset1 = $('.mcolor').offset();
+            var offset2 = $('.mpattern').offset();
+            $('.co_menu').offset({top: offset1.top+30, left :  offset1.left-30});
+            $('.pa_menu').offset({top: offset2.top+30, left :  offset2.left-20});
+        $(".mcolor").click(function(){
             $('.co_menu').slideToggle();
         });
     });
-        $(".mpattern").mouseover(function(){
+        $(".mpattern").click(function(){
             $('.pa_menu').slideToggle();
         });
 </script><!--오프셋값을 도출시켜 오프셋 값에 맞게 카테고리 메뉴를 생성시킵니다.-->
@@ -143,11 +152,11 @@
         <div class="page_opacity">
         </div>
         <!--sidebar가 보여질 경우에 메뉴에 자연스레 시선이 가게끔 메뉴바를 제외한 페이지를 죽여주는 역할을 하면서 메뉴를 자연스럽게 없애기 위해서 클릭이벤트로 메뉴바를 안보이게 하는 버튼 역할을 합니다.-->
-	    <div class="container">
+        <div class="container">
             <div class="sidebar">
                 <span><p class="side_list">List</p></span>
-                	<div class="inner_list">
-                		<p class="list_sf">Color</p>
+                    <div class="inner_list">
+                        <p class="list_sf">Color</p>
                         <div class="colorsl">
                             <p><a href="blackjean.html">Black-jean</a></p>
                             <p><a href="blue.html">Blue</a></p>
@@ -159,7 +168,7 @@
                             <p><a href="skyblue.html">Skyblue</a></p>
                             <p><a href="yellow.html">Yellow</a></p>
                         </div>
-                		<p class="list_sum">Pattern</p>
+                        <p class="list_sum">Pattern</p>
                         <div class="patternsl">
                             <p><a href="dot.html">Dot</a></p>
                             <p><a href="dot2.html">Dot2</a></p>
@@ -170,25 +179,30 @@
                             <p><a href="stripe4.html">Stripe4</a></p>
                             <p><a href="stripe5.html">Stripe5</a></p>
                         </div>
-                	</div>
+                    </div>
+                    <div class="inner_blank"></div>
                     <script>
-                        $(function(){
-                            $('.colorsl, .patternsl').css('display','none');
-                        });
                         $(function(){
                             $('.list_sf').click(function(){
                                 $('.colorsl').slideToggle('slow');
-                                $('.colorsl').css('display','block');
+                                $('.patternsl').slideUp('slow');
                             });
                         });
                         $(function(){
                             $('.list_sum').click(function(){
                                 $('.patternsl').slideToggle('slow');
+                                $('.colorsl').slideUp('slow');
+                            });
+                        });
+                        $(function(){
+                            $('.list_sum, .list_sf').click(function(){
+                                $('.inner_blank').slideToggle('slow');
                             });
                         });
                     </script>
                 <span><a href="event.html"><p class="side_event">Event</p></a></span>
                 <span><a href="notice.html"><p class="side_notice">Notice</p></a></span>
+                <span><a href="index.html"><p class="side_home">Main</p></a></span>
                 <a href="inform.html"><svg height="50" width="50" id="clickme">
   <circle cx="25" cy="25" r="20" stroke="black" stroke-width="3" fill="gray" />
 <text x="3" y="30" fill="white" font-family="'ArialRoundedMTBold'" font-size="10pt" letter-spacing="1px">inform</text>
@@ -198,10 +212,12 @@
 	     	<article class="content">
 	         	<div class="slide">
                         <div class="images">
-                        	<img src="images/bagics/black-jean.jpg" id="mainImage" alt="Image">    <!--이미지 슬라이드를 적용시킬 이미지 태그입니다.-->
+                        <a href="event.html" id="imgbannerhref">
+                        	<img src="images/banner.jpg" id="mainImage" alt="Image">
+                            </a>    <!--이미지 슬라이드를 적용시킬 이미지 태그입니다.-->
                         	<script>
                             var myImage=document.getElementById("mainImage"); //이미지태그를 불러옵니다.
-                            var imageArray=["images/bagics/black-jean.jpg","images/bagics/blue.jpg","images/bagics/blue-jean.jpg","images/bagics/brown.jpg","images/bagics/orangebrown.jpg","images/pattern/dot.jpg","images/pattern/dot3.jpg","images/pattern/dot2.jpg","images/pattern/stripe.jpg","images/pattern/stripe3.jpg"];     //적용시킬 이미지를 순서대로 나열시킵니다.
+                            var imageArray=["images/banner.jpg","images/banner2.jpg","images/banner3.jpg"];     //적용시킬 이미지를 순서대로 나열시킵니다.
                             var imageIndex=0;
                             function changeImage(){
                             	myImage.setAttribute("src",imageArray[imageIndex]);    //변수를 불러와서 이미지태그에 적용시킵니다.
@@ -210,9 +226,20 @@
                         	       	imageIndex=0;
                             	}
                             }
-                            setInterval(changeImage,2000);  //합수의 시간을 조정합니다.
+                            setInterval(changeImage,4000);  //합수의 시간을 조정합니다.
                             </script>
                             <!--이미지 슬라이드를 위한 자바스크립트입니다.-->
+                            <script>
+                            var srcname =document.getElementById('mainImage').getAttribute("src");
+                            var herflink =document.getElementById('imgbannerhref');
+                            function changehref(){
+                                if(srcname="banner3"){
+                                    herflink.setAttribute("href","event.html");
+                                } else{
+                                    hreflink.setAttribute("href","notice.html");
+                                }
+                            }
+                            </script>
                         </div>
 	         	</div>
 	         	<ul id="selecter1">
@@ -245,71 +272,92 @@
 			var getpage=document.getElementById("gopage");
 	        $(function(){
 	        	$('#blackjeanimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#242426");
 	        		getpage.setAttribute("href","blackjean.html");
 	        	});
 	        	$('#bluejeanimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#2c4585");
 	        		getpage.setAttribute("href","bluejean.html");
 	        	});
 	        	$('#blueimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#2f5e7a");
 	        		getpage.setAttribute("href","blue.html");
 	        	});
 	        	$('#brownimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#534d4d");
 	        		getpage.setAttribute("href","brown.html");
 	        	});
 	        	$('#orangebrownimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#a24830");
 	        		getpage.setAttribute("href","orangebrown.html");
 	        	});
 	        	$('#pinkimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#bd3a64");
 	        		getpage.setAttribute("href","pink.html");
 	        	});
 	        	$('#redimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#ac0b1b");
 	        		getpage.setAttribute("href","red.html");
 	        	});
 	        	$('#skyblueimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#90a1b5");
 	        		getpage.setAttribute("href","skyblue.html");
 	        	});
 	        	$('#yellowimage').click(function(){
+                    $(".animats").css("background","none");
 	        		$(".animats").css("background-color","#d4a45c");
 	        		getpage.setAttribute("href","yellow.html");
 	        	});
 	        	$('#dotimage').click(function(){
-	        		$(".animats").css("background-image","url('images/pattern/dot.jpg')");
+                    $(".animats").css("background","none");
+                    $(".animats").css("background-size","50px 50px");
+	        		$(".animats").css("background-image","radial-gradient(white 10%, transparent 10%), radial-gradient(white 10%, transparent 10%)");
+                    $(".animats").css("background-position","0 0, 50% 50%");
+                    $(".animats").css("background-color","#00005B");
 	        		getpage.setAttribute("href","dot.html");
 	        	});
 	        	$('#dot2image').click(function(){
-	        		$(".animats").css("background-image","url('images/pattern/dot2.jpg')");
+                    $(".animats").css("background","none");
+                    $(".animats").css("background-size","50px 50px");
+                    $(".animats").css("background-image","radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%)");
+                    $(".animats").css("background-position","0 0, 50% 25%, 25% 50%, 75% 75%");
+                    $(".animats").css("background-color","DarkSlateBlue");
 	        		getpage.setAttribute("href","dot2.html");
 	        	});
 	        	$('#dot3image').click(function(){
-	        		$(".animats").css("background-image","url('images/pattern/dot3.jpg')");
+                    $(".animats").css("background","none");
+                    $(".animats").css("background-size","50px 50px");
+                    $(".animats").css("background-image","radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%), radial-gradient(white 5%, transparent 10%)");
+                    $(".animats").css("background-position","0 0, 0 50%, 25% 25%, 25% 75%, 50% 0, 50% 50%, 75% 25%, 75% 75%");
+                    $(".animats").css("background-color","#101030");
 	        		getpage.setAttribute("href","dot3.html");
 	        	});
 	        	$('#stripeimage').click(function(){
-	        		$(".animats").css("background-image","url('images/pattern/stripe.jpg')");
+                    $(".animats").css("background","repeating-linear-gradient(0deg, white, white 5px, DarkSlateBlue 5px, DarkSlateBlue 10px)");
 	        		getpage.setAttribute("href","stripe.html");
 	        	});
 	        	$('#stripe2image').click(function(){
-	        		$(".animats").css("background-image","url('images/pattern/stripe2.jpg')");
+                    $(".animats").css("background","repeating-linear-gradient(0deg, white, white 10px, DarkSlateBlue 10px, DarkSlateBlue 20px)");
 	        		getpage.setAttribute("href","stripe2.html");
 	        	});
 	        	$('#stripe3image').click(function(){
-	        		$(".animats").css("background-image","url('images/pattern/stripe3.jpg')");
+                    $(".animats").css("background","repeating-linear-gradient(0deg, white, white 5px, PaleVioletRed 5px, PaleVioletRed 10px)");
 	        		getpage.setAttribute("href","stripe3.html");
 	        	});
 	        	$('#stripe4image').click(function(){
-	        		$(".animats").css("background-image","url('images/pattern/stripe4.jpg')");
+                    $(".animats").css("background","repeating-linear-gradient(0deg, beige, beige 2px, CadetBlue 2px, CadetBlue 4px, beige 4px, beige 6px, CadetBlue 6px, CadetBlue 8px)");
 	        		getpage.setAttribute("href","stripe4.html");
 	        	});
 	        	$('#stripe5image').click(function(){
-	        		$(".animats").css("background-image","url('images/pattern/stripe5.jpg')");
+                    $(".animats").css("background","repeating-linear-gradient(90deg, beige, beige 5px, CadetBlue 5px, CadetBlue 8px, beige 8px, beige 13px, CadetBlue 13px, CadetBlue 16px)");
 	        		getpage.setAttribute("href","stripe5.html");
 	        	});
 	        });/*이미지를 태그에 적용시키고 버튼의 링크를 변환하는 스크립트입니다.*/

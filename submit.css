@@ -70,9 +70,9 @@ p{
     animation: flash 1s infinite;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px) { 
-.chargeForm{
-	border-top: 10px solid black;
-	width:100%;
-	padding-left:0px;
+	.chargeForm{
+		border-top: 10px solid black;
+		width:100%;
+		padding-left:0px;
+	}
 }
-} /*iPhone 4+ galaxy series*/

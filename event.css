@@ -18,6 +18,7 @@
     opacity: 0;
   }
 }
+
 body{
    	font-family: helvetica;
    	font-size:13.5pt;
@@ -44,11 +45,13 @@ input{
   	font-size: 10pt;
    	margin: 0;
    	padding : 5px;
+    display: none;
 }
 .counter{ /*카운터 상자의 모양을 설정합니다*/
     background-color:black; /*배경색*/
     color:yellow;/*글자색상*/
     font-weight:bold;/*글자모양*/
+    display: none;
 }
 .page{
   margin: 0 auto;
@@ -70,6 +73,7 @@ input{
     cursor: pointer;
     -webkit-animation: flash 4s infinite;
     animation: flash 4s infinite;
+    z-index: 1;
 }
 .menu1, .menu2, .menu3{
    	width:30px;
@@ -85,6 +89,10 @@ input{
    	height: auto;
 }
 .header{
+}
+
+a[href^="event"],a[href^="notice"]{
+  color:white;
 }
 .logo{
   	height:50px;
@@ -130,6 +138,7 @@ label{
    	padding-top:5%;
    	vertical-align: center;
    	display: none;
+    z-index: 2;
 }
 .sidebar p{
    	margin: 20px auto;
@@ -345,7 +354,14 @@ li{
 .co_menu li:last-of-type, .pa_menu li:last-of-type{
   	border:none;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) { 
+.inner_blank{
+  display: none;
+  height: 600px;
+}
+.side_home{
+  display: none;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) { 
   body{
     font-size:12pt;
     letter-spacing: 1.7px;
@@ -370,13 +386,17 @@ li{
   .sidebar p{
     margin: 10px auto;
   }
-  .mainImage{
-    width:100%;
-    height:50px;
+  .logo{
+    font-family: helvetica-bold;
+    font-size: 3em;
+    font-weight: bold;
+  }
+  div:hover .logo{
+    font-size: 3em;
+    -webkit-transition: none;
   }
   .footer{
     height:20px;
-    display: none;
   }
   .line{
     display: none;
@@ -385,48 +405,46 @@ li{
     width:100px;
   }
   li{
-    width:80px;
-    margin: 5px auto;
-  }
-} /*iPhone 4+ galaxy series*/
-@media only screen and (min-device-width: 481px) and (max-device-width: 768px) { 
-  body{
-    font-size:12pt;
-    letter-spacing: 1.7px;
+      width:80px;
+      margin: 5px auto;
     }
-  .page{
-    padding: 0 0px;
-    height:auto;
-    width:100%;
+  .event{
+      width: 89%;
+      height:auto;
+      padding:5%;
   }
-  .menubar{
-    height:10px;
+  .Q1box{
+    margin: 30px auto;
+    width:80%;
+    height: auto;
+    padding:5%;
+    line-height: 24px;
   }
-  label{
-    display: none;
+  .Q2box{
+  width:80%;
+  height:auto;
+  float:none;
+  padding:5%;
+  text-align: left;
+  margin: 5% auto;
+    line-height: 24px;
   }
-  .sidebar{
-    width:100%;
+  .Q3box{
+  width:80%;
+  height:auto;
+  padding:5%;
+  float:none;
+  text-align: left;
+  margin: 5% auto;
+    line-height: 24px;
   }
-  .sidebar p{
-    margin: 10px auto;
+  .side_home{
+    display: block;
   }
-  .mainImage{
-    width:100%;
-    height:50px;
+  .colorsl{
+    height: 700px;
   }
-  .footer{
-    height:30px;
-    display: none;
+  .inner_blank{
+    height: 660px;
   }
-  ul{
-    width:100px;
-  }
-  .line{
-    display: none;
-  }
-  li{
-    width:80px;
-    margin: 5px auto;
-  }
-} /*iPhone 6 after series*/
+}

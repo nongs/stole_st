@@ -3,7 +3,9 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<title> Stole_st </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="order.css"/>
+    <script src="js/jquery-1.11.2.min.js"></script>
 </head>
 <body>
 <div class="page">
@@ -19,32 +21,21 @@ target="hidden_iframe" onsubmit="submitted=true;"><ol role="list" class="ss-ques
 <label class="ss-q-item-label" for="entry_753706012"><div class="ss-q-title">상품명
 </div>
 <div class="ss-q-help ss-secondary-text" dir="ltr"></div></label>
-<input type="text" name="entry.753706012" value="필수 질문입니다" class="ss-q-short" id="entry_753706012" dir="auto" aria-label="상품명  " title="">
+<input type="text" name="entry.753706012" onfocus="this.value='';" value="필수 질문 입니다." class="ss-q-short" id="entry_753706012" dir="auto" aria-label="상품명  " title="">
 <div class="error-message" id="1082858127_errorMessage"></div>
 </div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
 <div dir="ltr" class="ss-item  ss-text"><div class="ss-form-entry">
 <label class="ss-q-item-label" for="entry_1626835443"><div class="ss-q-title">수량
 </div>
 <div class="ss-q-help ss-secondary-text" dir="ltr"></div></label>
-<input type="number" name="entry.1626835443" value="0" class="ss-q-short" id="entry_1626835443" dir="auto" step="any" onload="novalue()">
-<div class="error-message" id="942960388_errorMessage">0보다 큰 숫자여야 합니다.</div>
-<script>
-	var inu = document.getElementsByClassName('ss-q-short')[1].style.value
-	var eromes = document.getElementsByClassName('error-message')[1]
-	function novalue(){
-		if(inu > 0){
-			eromes.style.display = 'none';
-		} else{
-			eromes.display = 'inline-black';
-		}
-	};
-</script>
+<input type="number" name="entry.1626835443" value="1" min="1" class="ss-q-short" id="entry_1626835443" dir="auto" step="any">
+<div class="error-message" id="942960388_errorMessage">1 이상의 숫자만 가능합니다.</div>
 </div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
 <div dir="ltr" class="ss-item  ss-text"><div class="ss-form-entry">
 <label class="ss-q-item-label" for="entry_970722138"><div class="ss-q-title">카카오톡 아이디 or 이메일
 </div>
 <div class="ss-q-help ss-secondary-text" dir="ltr"></div></label>
-<input type="text" name="entry.970722138" value="필수 질문입니다." class="ss-q-short" id="entry_970722138" dir="auto" aria-label="카카오톡 아이디 or 이메일  " title="">
+<input type="text" name="entry.970722138" onfocus="this.value='';" value="필수 질문 입니다." class="ss-q-short" id="entry_970722138" dir="auto" aria-label="카카오톡 아이디 or 이메일  " title=""/>
 <div class="error-message" id="1547262428_errorMessage"></div>
 </div></div></div>
 <input type="hidden" name="draftResponse" value="[,,&quot;5278835504870468422&quot;]

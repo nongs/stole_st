@@ -1,9 +1,10 @@
 <!doctype HTML>
 <html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<link rel="stylesheet" type="text/css" href="sgment.css"/>
-	<title>Stole_st</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="sgment.css"/>
+    <title>Stole_st</title>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script>
     $(document).ready(function(){
@@ -38,27 +39,35 @@
   ga('send', 'pageview');
 
 </script>
-	<div class="page">
-		<input id="one" name="transforms" type="radio" value="1">
-		<input id="two" name="transforms" type="radio" value="2">
-		<input id="three" name="transforms" type="radio" value="3">
-		<input id="four" name="transforms" type="radio" value="4">
-		<div class="navigation">
-        	<div class="menu1"></div>
-        	<div class="menu2"></div>
-        	<div class="menu3"></div>
+    <div class="page">
+        <input id="one" name="transforms" type="radio" value="1">
+        <input id="two" name="transforms" type="radio" value="2">
+        <input id="three" name="transforms" type="radio" value="3">
+        <input id="four" name="transforms" type="radio" value="4">
+        <div class="navigation">
+            <div class="menu1"></div>
+            <div class="menu2"></div>
+            <div class="menu3"></div>
         </div>
         <div class="header">
         <a href="index.html">
             <div class="logo">Stole_st</div></a>
             <div class="menubar">
-                	<label for="one" class="mcolor">color</label>
-                	<span class="line"></span>
-                	<label for="two" class="mpattern">pattern</label>
-                	<span class="line"></span><a herf="event.html">
-                	<label for="three" class="mevent">event</label></a>
-                	<span class="line"></span><a href="notice.html">
-                	<label for="four" class="mnotice">notice</label></a>
+                    <label for="one" class="mcolor">color</label>
+                    <span class="line"></span>
+                    <label for="two" class="mpattern">pattern</label>
+                    <span class="line"></span>
+                    <a href="event.html" id="evecli"><label for="three" class="mevent" onclick="event_click()">event</label></a>
+                    <span class="line"></span>
+                    <a href="notice.html" id="notcli"><label for="four" class="mnotice" onclick="notice_click()">notice</label></a>
+                    <script>
+                    function event_click() {
+                        window.location="event.html";
+                    }
+                    function notice_click() {
+                        window.location="notice.html";
+                    }
+                    </script>
                     <ul class="co_menu">
                         <li><a href="blackjean.html">Black-jean</a></li>
                         <li><a href="blue.html">Blue</a></li>
@@ -82,32 +91,26 @@
                     </ul>
             </div>
         <script>
-    		$(function(){
-  				var offset1 = $('.mcolor').offset();
-  				var offset2 = $('.mpattern').offset();
-  				$('.co_menu').offset({top: offset1.top+30, left :  offset1.left-30});
-  				$('.pa_menu').offset({top: offset2.top+30, left :  offset2.left-20});
-        		$(".mcolor").mouseover(function(){
-        	    	$('.co_menu').slideDown();
-        		});
-        			$(".mcolor").click(function(){
-        			$('.co_menu').hide();
-        		});
-    		});
-        	$(".mpattern").mouseover(function(){
-            	$('.pa_menu').slideDown();
-        	});
-        	$(".mpattern").click(function(){
-        		$('.pa_menu').hide();
-        	});
-		</script>
+            $(function(){
+                var offset1 = $('.mcolor').offset();
+                var offset2 = $('.mpattern').offset();
+                $('.co_menu').offset({top: offset1.top+30, left :  offset1.left-30});
+                $('.pa_menu').offset({top: offset2.top+30, left :  offset2.left-20});
+        $(".mcolor").click(function(){
+            $('.co_menu').slideToggle();
+        });
+    });
+        $(".mpattern").click(function(){
+            $('.pa_menu').slideToggle();
+        });
+        </script>
         </div>
         <div class="page_opacity">
         </div>
-	    <div class="container">
+        <div class="container">
             <div class="sidebar">
                 <span><p class="side_list">List</p></span>
-                	<div class="inner_list">
+                    <div class="inner_list">
                         <p class="list_sf">Color</p>
                         <div class="colorsl">
                             <p><a href="blackjean.html">Black-jean</a></p>
@@ -132,24 +135,29 @@
                             <p><a href="stripe5.html">Stripe5</a></p>
                         </div>
                     </div>
+                    <div class="inner_blank"></div>
                     <script>
-                        $(function(){
-                            $('.colorsl, .patternsl').css('display','none');
-                        });
                         $(function(){
                             $('.list_sf').click(function(){
                                 $('.colorsl').slideToggle('slow');
-                                $('.colorsl').css('display','block');
+                                $('.patternsl').slideUp('slow');
                             });
                         });
                         $(function(){
                             $('.list_sum').click(function(){
                                 $('.patternsl').slideToggle('slow');
+                                $('.colorsl').slideUp('slow');
+                            });
+                        });
+                        $(function(){
+                            $('.list_sum, .list_sf').click(function(){
+                                $('.inner_blank').slideToggle('slow');
                             });
                         });
                     </script>
                 <span><a href="event.html"><p class="side_event">Event</p></a></span>
                 <span><a href="notice.html"><p class="side_notice">Notice</p></a></span>
+                <span><a href="index.html"><p class="side_home">Main</p></a></span>
             </div>
             <!--메뉴바 코드입니다. 모바일환경에 최적화 시켜야 합니다.-->
                 <div class="goods">
@@ -164,17 +172,12 @@
                 </div>
                 <div class="recomGoods">
                     <p>추천 상품</p>
-                    <img src="images/bagics/blue-jean.jpg">
-                    <img src="images/pattern/dot3.jpg">
-                    <img src="images/pattern/stripe3.jpg">
+                    <a href="blackjean.html"><img src="images/bagics/black-jean.jpg"></a>
+                    <a href="pink.html"><img src="images/bagics/pink.jpg"></a>
+                    <a href="stripe2.html"><img src="images/pattern/stripe2.jpg"></a>
                 </div>
-                <div class="preview">
-                    <img src="#">
-                    <img src="#">
-                    <img src="#">
-                    <img src="#">
-                    <img src="#">
-                    <img src="#">
+                <div class="preview">저희 쇼핑몰은 주문이 들어오는 즉시 제작이 들어가는 주문제작 사이트입니다.
+환불은 불가능하며 교환은 제품에 이상이있는 경우에만 가능합니다. 제품을 배송받은 일로부터 3일이내에  연락을 주시면 빠른시일내에 다시 보내드립니다.
                 </div>
             </div>
         </div>
