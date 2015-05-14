@@ -164,10 +164,19 @@
                     <img src="images/bagics/pink.jpg" alt="goods Image">
                     <div class="goodsInform">
                         <p class="goodsName">상품명 : Pink</p>
-                        <p class="goodsPrice">가격 : 8000 원</p>
+                        <p class="goodsPrice">가격 : 9500 원</p>
                         <p class="goodsamount">수량 : 
-                        <input type="number" value="0" min="0"></p>
+                        <input type="number" value="0" min="0" id="countitem" onfocusout="result()"></p>
+                        <script>
+                        function result() {
+                            var opw = document.getElementById('countitem').value;
+                            var ret = 9500 * opw ;
+                            document.getElementById('rest').innerHTML = ret;
+                        }
+                        </script>
+                        <p class="goodsPrice">총액 : <span id="rest"></span> 원</p>
                         <p><a href="order.html" target="_blank"><button type="button" id="charge">구입하러가기</button></a></p>
+                        <sub>배송비는 2500원 별도입니다.</sub>
                     </div>
                 </div>
                 <div class="recomGoods">
