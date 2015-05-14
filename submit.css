@@ -70,9 +70,10 @@ p{
     animation: flash 1s infinite;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px) { 
+	.page{padding-left:0;}
 	.chargeForm{
 		border-top: 10px solid black;
 		width:100%;
-		padding-left:0px;
+		padding-left:10px;
 	}
 }
