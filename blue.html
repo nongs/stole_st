@@ -175,7 +175,17 @@
                         }
                         </script>
                         <p class="goodsPrice">총액 : <span id="rest"></span> 원</p>
-                        <p><a href="order.html" target="_blank"><button type="button" id="charge">구입하러가기</button></a></p>
+                        <p><button type="button" id="charge">구입하러가기</button></p>
+                        <script>
+                            $(function(){
+                                $('#charge').click(function(){
+                                    var numcount =  document.getElementById('countitem').value;
+                                    console.log(numcount);
+                                    $('.orderpage').css("display", "block");
+                                    document.getElementById('entrynumber').value= numcount;
+                                });
+                            });
+                        </script>
                         <sub>배송비는 2500원 별도입니다.</sub>
                     </div>
                 </div>
@@ -195,5 +205,56 @@
 	    	<div class="copyright">COPYRIGHT© 2015 BY STOLE_ST.COM</div>
 	    </div>
 	</div>
+    <div class="orderpage">
+        <div class="chargeForm">
+            <script type="text/javascript">var submitted=false;</script>
+            <iframe name="hidden_iframe" id="hidden_iframe"
+            style="display:none;" onload="if(submitted)
+            {window.location='http://nongs.github.com/stole_st/submit.html';}"></iframe>
+            <form action="https://docs.google.com/forms/d/1XmTlQh1lEfpOWnUqif5NKbnX6taZ1TzpISwVAW9vIrU/formResponse" method="post"
+            target="hidden_iframe" onsubmit="submitted=true;"><ol role="list" class="ss-question-list" style="padding-left: 0">
+            <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="ltr" class="ss-item  ss-text"><div class="ss-form-entry">
+            <label class="ss-q-item-label" for="entry_753706012"><div class="ss-q-title">상품명
+            </div>
+            <div class="ss-q-help ss-secondary-text" dir="ltr"></div></label>
+            <input type="text" name="entry.753706012" value="Blue" class="ss-q-short" id="entry_753706012" dir="auto" aria-label="상품명  " title="">
+            <div class="error-message" id="1082858127_errorMessage"></div>
+            </div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="ltr" class="ss-item  ss-text"><div class="ss-form-entry">
+            <label class="ss-q-item-label" for="entry_1626835443"><div class="ss-q-title">수량
+            </div>
+            <div class="ss-q-help ss-secondary-text" dir="ltr"></div></label>
+            <input type="number" name="entrynumber" value="1" min="0" class="ss-q-short" id="entrynumber" dir="auto" step="any">
+            <div class="error-message" id="942960388_errorMessage">1 이상의 숫자만 가능합니다.</div>
+            </div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="ltr" class="ss-item  ss-text"><div class="ss-form-entry">
+            <label class="ss-q-item-label" for="entry_970722138"><div class="ss-q-title">카카오톡 아이디 or 이메일
+            </div>
+            <div class="ss-q-help ss-secondary-text" dir="ltr"></div></label>
+            <input type="text" name="entry.970722138" onfocus="this.value='';" value="필수 질문 입니다." class="ss-q-short" id="entry_970722138" dir="auto" aria-label="카카오톡 아이디 or 이메일  " title=""/>
+            <div class="error-message" id="1547262428_errorMessage"></div>
+            </div></div></div>
+            <input type="hidden" name="draftResponse" value="[,,&quot;5278835504870468422&quot;]
+            ">
+            <input type="hidden" name="pageHistory" value="0">
+
+
+            <input type="hidden" name="fbzx" value="5278835504870468422">
+
+            <div class="ss-item ss-navigate"><table id="navigation-table"><tbody><tr><td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+            <input type="submit" name="submit" value="&#48372;&#45236;&#44592;" id="ss-submit" class="jfk-button jfk-button-action ">
+            <div class="ss-password-warning ss-secondary-text"></div></td>
+            </tr></tbody></table></div></ol></form>
+        </div>
+        <p id="toback">돌아가기</p>
+        <script>
+            $(function(){
+                $('#toback').click(function(){
+                    $('.orderpage').css("display", "none");
+                });
+            });
+        </script>
+    </div>
 </body>
 </html>

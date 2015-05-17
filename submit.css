@@ -76,4 +76,10 @@ p{
 		width:100%;
 		padding-left:10px;
 	}
+	p{
+		width:80%;
+	}
+	.chargeForm div{
+		margin-top:50px;
+	}
 }
