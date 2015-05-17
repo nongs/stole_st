@@ -455,4 +455,13 @@ input[type="text"], input[type="number"]{
     width:100%;
     padding-left:10px;
   }
+	.ss-q-title{
+	  font-weight: bold;
+	  color:black;
+	  margin-bottom: 8px;
+	  margin-top: 10px;
+	}
+	.chargeForm label{
+		display: block;
+	}
 }
