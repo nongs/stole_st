@@ -68,7 +68,7 @@
     }
 //-->
     </script>
-    <script>
+<script>
 $(document).ready(function(){
     // canvas
     var cnvs = document.getElementById('cnvs');
@@ -129,34 +129,74 @@ $(document).ready(function(){
         });
 
         // 그리기
-        //var shape = document.getElementById('shape').value;   적용이 안됨.
         function draw(e)
         {
-            ctx.fillStyle = color;
-            ctx.fillRect(e.offsetX, e.offsetY, dot, dot);
-            /*if (shape==="square") {
+            var shape = document.getElementById('shape').value;
+            //ctx.fillStyle = color;
+            //ctx.fillRect(e.offsetX, e.offsetY, dot, dot);
+            if (shape==="square") {
                 isDraw = true;
                 square(e);
             }   else if (shape==="circle") {
                 isDraw = true;
-                circle(e); //적용이 안됨
-            }*/
+                circle(e);
+            }   else if (shape==="triangle") {
+                isDraw = true;
+                triangle(e);
+            }   else if (shape==="vertical") {
+                isDraw = true;
+                vertical(e);
+            }   else if (shape==="horizon") {
+                isDraw = true;
+                horizon(e);
+            }
         }
 
         //square
-        /*function square(e)
+        function square(e)
         {
             ctx.fillStyle = color;
             ctx.fillRect(e.offsetX, e.offsetY, dot, dot);
-        }*/
+        }
 
         //circle
-        /*function circle(e)
+        function circle(e)
         {
             ctx.beginPath();
-            ctx.arc(e.offsetX, e.offsetY,dot/2,0,2*Math.PI);
+            ctx.arc(e.offsetX, e.offsetY, dot/2, 0, 2*Math.PI);
             ctx.fillStyle = color;
-        }*/
+            ctx.fill();
+        }
+
+        //triangle
+        function triangle(e)
+        {
+            ctx.moveTo(e.offsetX, e.offsetY-dot/2);
+            ctx.lineTo(e.offsetX-dot/2, e.offsetY+dot/2);
+            ctx.lineTo(e.offsetX+dot/2, e.offsetY+dot/2);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        //vertical
+        function vertical(e)
+        {
+            ctx.moveTo(e.offsetX, 0);
+            ctx.lineTo(e.offsetX, 300);
+            ctx.lineWidth= dot;
+            ctx.strokeStyle = color;
+            ctx.stroke();
+        }
+
+        //horizon
+        function horizon(e)
+        {
+            ctx.moveTo(0, e.offsetY);
+            ctx.lineTo(300, e.offsetY);
+            ctx.lineWidth= dot;
+            ctx.strokeStyle = color;
+            ctx.stroke();
+        }
 
         // 지우기
         function clearCanvas()
@@ -257,13 +297,14 @@ $(document).ready(function(){
                     <option value="rgb(255, 255, 0)">yellow</option>
                     <option value="rgb(255, 255, 255)">white</option>
                 </select>
-                <!--<select id="shape">
+                <!--모양-->
+                <select id="shape">
                     <option value="square">square</option>
                     <option value="circle">circle</option>
                     <option value="triangle">triangle</option>
                     <option value="vertical">vertical</option>
-                    <option value="horizon)">horizon</option>
-                </select>   //적용이 안됨-->
+                    <option value="horizon">horizon</option>
+                </select>
             </div>
             <br />
             <button id="btnDel">지우기</button>
